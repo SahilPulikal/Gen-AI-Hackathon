@@ -78,16 +78,16 @@ if page == "Dashboard":
     else:
         filtered_df = df_clients
         
-    st.dataframe(filtered_df[['CustomerId', 'Surname', 'Age', 'Balance', 'RiskProfile', 'FinancialGoal']], use_container_width=True)
+    st.dataframe(filtered_df[['CustomerId', 'Surname', 'Age', 'Balance', 'RiskProfile', 'FinancialGoal']], width='stretch')
     
     # Charts
     c1, c2 = st.columns(2)
     with c1:
         fig_risk = px.pie(df_clients, names='RiskProfile', title='Client Risk Distribution', hole=0.4)
-        st.plotly_chart(fig_risk, use_container_width=True)
+        st.plotly_chart(fig_risk, width='stretch')
     with c2:
         fig_geo = px.bar(df_clients, x='Geography', y='Balance', title='AUM by Geography')
-        st.plotly_chart(fig_geo, use_container_width=True)
+        st.plotly_chart(fig_geo, width='stretch')
 
 elif page == "Client View":
     st.title("Client 360° View")
@@ -109,10 +109,10 @@ elif page == "Client View":
         st.subheader("Current Portfolio")
         if portfolio:
             df_port = pd.DataFrame(list(portfolio.items()), columns=['Ticker', 'Value'])
-            st.dataframe(df_port, use_container_width=True)
+            st.dataframe(df_port, width='stretch')
             
             fig_port = px.pie(df_port, values='Value', names='Ticker', title='Portfolio Allocation')
-            st.plotly_chart(fig_port, use_container_width=True)
+            st.plotly_chart(fig_port, width='stretch')
         else:
             st.info("No portfolio data available.")
             
@@ -178,7 +178,7 @@ elif page == "Market Intelligence":
     data = get_market_data(tickers)
     
     if not data.empty:
-        st.dataframe(data, use_container_width=True)
+        st.dataframe(data, width='stretch')
         
         # Simple chart
         sel_ticker = st.selectbox("Select Ticker for Detail", tickers)

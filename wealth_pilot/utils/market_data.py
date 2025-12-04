@@ -11,7 +11,7 @@ def get_market_data(tickers):
     
     # yfinance expects space-separated string
     tickers_str = " ".join(tickers)
-    data = yf.download(tickers_str, period="5d", group_by='ticker', progress=False)
+    data = yf.download(tickers_str, period="5d", group_by='ticker', progress=False, auto_adjust=True)
     
     market_summary = []
     
