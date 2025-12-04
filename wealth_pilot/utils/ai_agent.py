@@ -63,3 +63,69 @@ def chat_with_agent(query, context):
         return response.text
     except Exception as e:
         return f"Error responding to chat: {e}"
+
+def analyze_news_impact(news_items, portfolio, api_key=None):
+    """
+    Analyzes news headlines to determine impact on the client's portfolio.
+    """
+    if api_key:
+        genai.configure(api_key=api_key)
+        
+    model = genai.GenerativeModel('gemini-2.5-flash')
+    
+    prompt = f"""
+    You are a Financial News Analyst.
+    
+    **Client Portfolio:**
+    {json.dumps(portfolio, indent=2)}
+    
+    **Recent Market News:**
+    {json.dumps(news_items, indent=2)}
+    
+    **Task:**
+    1. Identify which news items are relevant to the portfolio holdings.
+    2. Classify the sentiment of each relevant news item as POSITIVE, NEGATIVE, or NEUTRAL.
+    3. Provide a one-sentence "Impact Summary" for the wealth manager.
+    
+    **Output Format:**
+    Markdown table with columns: Ticker | News Title | Sentiment | Impact Summary
+    """
+    
+    try:
+        response = model.generate_content(prompt)
+        return response.text
+    except Exception as e:
+        return f"Error analyzing news: {e}"
+
+def generate_meeting_agenda(client_profile, api_key=None):
+    """
+    Generates a meeting agenda and script for the wealth manager.
+    """
+    if api_key:
+        genai.configure(api_key=api_key)
+
+    model = genai.GenerativeModel('gemini-2.5-flash')
+    
+    prompt = f"""
+    You are an expert Wealth Manager preparing for a client meeting.
+    
+    **Client Profile:**
+    {json.dumps(client_profile, indent=2)}
+    
+    **Task:**
+    Create a structured meeting agenda and a "Call Script".
+    
+    **Agenda Structure:**
+    1. **Ice Breaker**: Personalized based on age/interests (infer from profile).
+    2. **Portfolio Review**: High-level performance summary.
+    3. **Goal Check-in**: Specific discussion points for their goal ({client_profile.get('FinancialGoal')}).
+    4. **Action Items**: 2-3 proposed changes or products to discuss.
+    
+    **Tone:** Professional, empathetic, and proactive.
+    """
+    
+    try:
+        response = model.generate_content(prompt)
+        return response.text
+    except Exception as e:
+        return f"Error generating agenda: {e}"

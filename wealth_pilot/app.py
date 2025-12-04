@@ -3,8 +3,12 @@ import pandas as pd
 import json
 import os
 import plotly.express as px
-from utils.market_data import get_market_data
-from utils.ai_agent import configure_genai, get_portfolio_analysis, chat_with_agent
+from utils.market_data import get_market_data, get_market_news, get_ticker_history
+from utils.ai_agent import configure_genai, get_portfolio_analysis, chat_with_agent, analyze_news_impact, generate_meeting_agenda
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Page Config
 st.set_page_config(page_title="WealthPilot | Accenture", layout="wide", page_icon="📈")
@@ -36,13 +40,27 @@ with st.sidebar:
     st.markdown("---")
     page = st.radio("Navigation", ["Dashboard", "Client View", "Market Intelligence"])
     st.markdown("---")
-    api_key = st.text_input("Gemini API Key", type="password")
+    
+    # API Key Logic
+    env_api_key = os.getenv("GOOGLE_API_KEY")
+    if env_api_key:
+        api_key = env_api_key
+        st.success("✅ API Key Loaded")
+    else:
+        api_key = st.text_input("Gemini API Key", type="password")
+        
     if api_key:
-        os.environ["GOOGLE_API_KEY"] = api_key
         configure_genai(api_key)
-        st.success("AI Agent Active")
     else:
         st.warning("Enter API Key to enable AI features")
+
+# Session State Initialization
+if 'ai_analysis' not in st.session_state:
+    st.session_state['ai_analysis'] = None
+if 'news_impact' not in st.session_state:
+    st.session_state['news_impact'] = None
+if 'meeting_agenda' not in st.session_state:
+    st.session_state['meeting_agenda'] = None
 
 # Load Data
 @st.cache_data
@@ -125,7 +143,10 @@ elif page == "Client View":
                 market_summary = get_market_data(tickers)
                 
                 analysis = get_portfolio_analysis(client.to_dict(), market_summary)
+                st.session_state['ai_analysis'] = analysis
                 st.markdown(analysis)
+        elif st.session_state['ai_analysis']:
+            st.markdown(st.session_state['ai_analysis'])
         
         st.markdown("---")
         st.subheader("Chat with Agent")
@@ -135,6 +156,39 @@ elif page == "Client View":
                 context = f"Client: {client.to_dict()}\nPortfolio: {portfolio}"
                 response = chat_with_agent(user_query, context)
                 st.write(response)
+
+    # New Agentic Features
+    st.markdown("---")
+    st.subheader("Agentic Workflows")
+    
+    col_a, col_b = st.columns(2)
+    
+    with col_a:
+        if st.button("Analyze News Impact"):
+            with st.spinner("Scanning market news..."):
+                # Gather news for all tickers
+                all_news = []
+                for ticker in portfolio.keys():
+                    news = get_market_news(ticker)
+                    all_news.extend(news)
+                
+                if all_news:
+                    impact_analysis = analyze_news_impact(all_news[:10], portfolio, api_key=api_key) # Limit to top 10 for speed
+                    st.session_state['news_impact'] = impact_analysis
+                    st.markdown(impact_analysis)
+                else:
+                    st.info("No recent news found for portfolio holdings.")
+        elif st.session_state['news_impact']:
+            st.markdown(st.session_state['news_impact'])
+
+    with col_b:
+        if st.button("Prepare Meeting Agenda"):
+            with st.spinner("Drafting agenda..."):
+                agenda = generate_meeting_agenda(client.to_dict(), api_key=api_key)
+                st.session_state['meeting_agenda'] = agenda
+                st.markdown(agenda)
+        elif st.session_state['meeting_agenda']:
+            st.markdown(st.session_state['meeting_agenda'])
 
     # Report Generation
     st.markdown("---")
@@ -146,7 +200,21 @@ elif page == "Client View":
             def header(self):
                 self.set_font('Arial', 'B', 12)
                 self.cell(0, 10, 'WealthPilot Client Report', 0, 1, 'C')
-                
+            
+            def chapter_title(self, title):
+                self.set_font('Arial', 'B', 12)
+                self.ln(5)
+                self.cell(0, 10, title, 0, 1, 'L')
+                self.ln(2)
+
+            def chapter_body(self, body):
+                self.set_font('Arial', '', 10)
+                # FPDF doesn't support full Markdown or Unicode well by default
+                # We'll do basic cleanup
+                body = body.encode('latin-1', 'replace').decode('latin-1')
+                self.multi_cell(0, 5, body)
+                self.ln()
+
         pdf = PDF()
         pdf.add_page()
         pdf.set_font("Arial", size=12)
@@ -155,13 +223,21 @@ elif page == "Client View":
         pdf.cell(200, 10, txt=f"Risk Profile: {client['RiskProfile']}", ln=1, align='L')
         pdf.cell(200, 10, txt=f"Total AUM: ${client['Balance']:,.2f}", ln=1, align='L')
         
-        pdf.ln(10)
-        pdf.set_font("Arial", 'B', size=12)
-        pdf.cell(200, 10, txt="Portfolio Holdings:", ln=1, align='L')
-        pdf.set_font("Arial", size=12)
-        
+        pdf.chapter_title("Portfolio Holdings")
         for ticker, value in portfolio.items():
             pdf.cell(200, 10, txt=f"{ticker}: ${value:,.2f}", ln=1, align='L')
+            
+        if st.session_state.get('ai_analysis'):
+            pdf.chapter_title("AI Portfolio Analysis")
+            pdf.chapter_body(st.session_state['ai_analysis'])
+            
+        if st.session_state.get('news_impact'):
+            pdf.chapter_title("News Impact Analysis")
+            pdf.chapter_body(st.session_state['news_impact'])
+            
+        if st.session_state.get('meeting_agenda'):
+            pdf.chapter_title("Meeting Agenda")
+            pdf.chapter_body(st.session_state['meeting_agenda'])
             
         # Save to temp file
         with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp:
@@ -174,16 +250,45 @@ elif page == "Market Intelligence":
     st.title("Market Intelligence")
     st.markdown("Real-time market tracking for wealth strategies.")
     
-    tickers = ["SPY", "QQQ", "IWM", "GLD", "BND", "BTC-USD"]
+    # Ticker names mapping
+    ticker_names = {
+        "SPY": "S&P 500 ETF",
+        "QQQ": "Nasdaq 100 ETF",
+        "IWM": "Russell 2000 ETF",
+        "GLD": "Gold ETF",
+        "BND": "Bond ETF",
+        "BTC-USD": "Bitcoin"
+    }
+    
+    tickers = list(ticker_names.keys())
     data = get_market_data(tickers)
     
     if not data.empty:
+        # Add full name column
+        data['Name'] = data['Ticker'].map(ticker_names)
+        data = data[['Ticker', 'Name', 'Price', 'Change', 'PctChange']]
         st.dataframe(data, width='stretch')
         
-        # Simple chart
-        sel_ticker = st.selectbox("Select Ticker for Detail", tickers)
-        # In a real app, we'd fetch history here. For now just show the price.
-        row = data[data['Ticker'] == sel_ticker].iloc[0]
-        st.metric(sel_ticker, f"${row['Price']}", f"{row['PctChange']}%")
+        # Price History Chart
+        st.subheader("Price History")
+        
+        # Create selectbox options with full names
+        ticker_options = [f"{t} - {ticker_names[t]}" for t in tickers]
+        sel_option = st.selectbox("Select Ticker for Detail", ticker_options)
+        sel_ticker = sel_option.split(" - ")[0]
+        
+        # Fetch history
+        history = get_ticker_history(sel_ticker, period="1mo")
+        
+        if not history.empty:
+            fig_history = px.line(history, x='Date', y='Close', title=f'{ticker_names[sel_ticker]} - 1 Month Price History')
+            fig_history.update_layout(xaxis_title="Date", yaxis_title="Price (USD)")
+            st.plotly_chart(fig_history, width='stretch')
+            
+            # Also show current price metric
+            row = data[data['Ticker'] == sel_ticker].iloc[0]
+            st.metric(ticker_names[sel_ticker], f"${row['Price']}", f"{row['PctChange']}%")
+        else:
+            st.warning(f"Unable to fetch history for {sel_ticker}")
     else:
         st.warning("Unable to fetch market data.")
