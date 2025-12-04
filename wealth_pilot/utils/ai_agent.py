@@ -17,7 +17,7 @@ def get_portfolio_analysis(client_profile, market_summary):
     """
     Generates a portfolio analysis using Gemini.
     """
-    model = genai.GenerativeModel('gemini-pro')
+    model = genai.GenerativeModel('gemini-2.5-flash')
     
     prompt = f"""
     You are an expert Wealth Management AI Assistant.
@@ -47,7 +47,7 @@ def chat_with_agent(query, context):
     """
     Chat with the agent about a specific client context.
     """
-    model = genai.GenerativeModel('gemini-pro')
+    model = genai.GenerativeModel('gemini-2.5-flash')
     
     prompt = f"""
     Context:
