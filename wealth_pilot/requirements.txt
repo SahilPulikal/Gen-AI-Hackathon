@@ -6,3 +6,4 @@ google-generativeai
 fpdf
 faker
 python-dotenv
+python-pptx
