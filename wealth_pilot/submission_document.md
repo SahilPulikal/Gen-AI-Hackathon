@@ -1,51 +1,11 @@
-# WealthPilot - Wealth Manager Enablement Tool
+# WealthPilot - Hackathon Submission
 
-## Overview
-WealthPilot is an Agentic AI application designed to help wealth managers proactively manage client portfolios. It combines real-time market data with client profiles to generate actionable insights.
-
-## Features
-- **Dashboard**: High-level view of all clients with risk alerts.
-- **Client 360**: Detailed view of client portfolios with AI-driven analysis.
-- **AI Agent**: Chat with your data to ask specific questions (e.g., "How does the recent tech drop affect this client?").
-- **Market Intelligence**: Real-time tracking of key indices.
-- **Report Generation**: Export client summaries to PDF.
-
-## Setup Instructions
-
-1. **Install Dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-2. **Generate Data**:
-   ```bash
-   python utils/data_generator.py
-   ```
-   This will create `data/clients.csv` with realistic synthetic data.
-
-3. **Run the Application**:
-   ```bash
-   streamlit run app.py
-   ```
-
-4. **API Key**:
-   - You will need a Google Gemini API Key.
-   - Enter it in the sidebar when the app launches.
-
-## Tech Stack
-- **Frontend**: Streamlit
-- **Data**: Pandas, Faker (Synthetic), yfinance (Real Market Data)
-- **AI**: Google Gemini Pro
-- **Visualization**: Plotly
-
-## Hackathon Submission Details
-
-### 1. Business Challenge / Problem Statement
+## 1. Business Challenge / Problem Statement
 **The Challenge:** Wealth Managers today are overwhelmed with data. They manage hundreds of clients, each with unique portfolios, goals, and risk profiles. Simultaneously, they must track thousands of market news events daily.
 **The Gap:** Existing tools are passive. They show data but don't interpret it. Wealth managers spend hours manually connecting the dots between "Market News" and "Client Impact," leading to missed opportunities and reactive (rather than proactive) client service.
 **The Goal:** To build an "Agentic AI" workspace that proactively monitors the market, understands client context, and drafts actionable insights automatically.
 
-### 2. Solution and Architecture
+## 2. Solution and Architecture
 **Solution Name:** WealthPilot
 **Core Concept:** A "Proactive AI Co-pilot" for Wealth Managers.
 **Key Features:**
@@ -63,7 +23,7 @@ WealthPilot is an Agentic AI application designed to help wealth managers proact
     *   **LLM:** Google Gemini 1.5 Flash (via `google-generativeai`).
     *   **Agentic Logic:** Custom Python functions that chain data retrieval with LLM reasoning.
 
-### 3. Prompts Used for the Solution
+## 3. Prompts Used for the Solution
 **Portfolio Analysis Agent:**
 > "You are an expert Wealth Management AI Assistant. Analyze the client's portfolio risk alignment with their profile (Age, Risk Profile). Identify any concentration risks or opportunities based on the market context. Provide 3 actionable recommendations."
 
@@ -73,17 +33,17 @@ WealthPilot is an Agentic AI application designed to help wealth managers proact
 **Meeting Prep Agent:**
 > "You are an expert Wealth Manager preparing for a client meeting. Create a structured meeting agenda and a 'Call Script'. Include: Ice Breaker (personalized), Portfolio Review, Goal Check-in, and Action Items. Tone: Professional, empathetic, and proactive."
 
-### 4. Tech Stack Used
+## 4. Tech Stack Used
 *   **Programming Language:** Python 3.9+
 *   **Frontend Framework:** Streamlit
 *   **Data Manipulation:** Pandas, NumPy
 *   **Visualization:** Plotly Express
 
-### 5. APIs Used
+## 5. APIs Used
 *   **Google Gemini API (`google-generativeai`):** For all reasoning, analysis, and content generation tasks.
 *   **Yahoo Finance API (`yfinance`):** For fetching real-time stock prices, historical data, and market news.
 
-### 6. Tools Used
+## 6. Tools Used
 *   **VS Code:** For development.
 *   **Google AI Studio:** For prompt engineering and testing.
 *   **Git/GitHub:** For version control.
