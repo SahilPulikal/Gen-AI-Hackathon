@@ -50,19 +50,20 @@ def create_presentation():
     ])
 
     # Slide 4: Key Features
-    add_slide("Key Features", [
-        "Client 360° Dashboard: Unified view of risk & holdings.",
-        "News Impact Agent: Real-time sentiment analysis per client.",
-        "Meeting Prep Agent: One-click agenda & script generation.",
-        "Interactive Chat: 'Talk to your data' for complex queries."
+    add_slide("Key Features: Empowering the Manager", [
+        "Strategy Crew (NEW): Multi-Agent team for portfolio planning.",
+        "Black Swan Simulator (NEW): Market crash impact modeling.",
+        "Real-Time Feedback: Transparent AI reasoning UI.",
+        "Client 360° Dashboard: Deep risk & holding analysis.",
+        "News Impact Agent: Personalized sentiment scanning."
     ])
 
     # Slide 5: Architecture
     add_slide("Architecture & Tech Stack", [
         "Frontend: Streamlit (Python)",
-        "Intelligence: Google Gemini 1.5 Flash",
-        "Data Layer: Yahoo Finance (Live) + Synthetic Data",
-        "Security: Enterprise-grade data handling patterns."
+        "Intelligence: Google Gemini 2.5 Flash",
+        "Agent Framework: Custom Multi-Agent Engine (CrewAI-style)",
+        "Data Layer: Yahoo Finance (Live) + Synthetic Data"
     ])
 
     # Slide 6: Business Impact

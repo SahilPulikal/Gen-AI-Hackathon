@@ -28,7 +28,7 @@
 ## Slide 5: Architecture
 **Title:** Built with Gen AI & Real-Time Data
 *   **Frontend:** Streamlit (Python)
-*   **Intelligence:** Google Gemini 1.5 Flash (Agentic Reasoning)
+*   **Intelligence:** Google Gemini 2.5 Flash (Agentic Reasoning)
 *   **Data Layer:** Yahoo Finance (Live Market Data) + Synthetic Banking Data
 *   **Security:** Enterprise-grade data handling (Simulated).
 

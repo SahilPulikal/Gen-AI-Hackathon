@@ -4,11 +4,14 @@
 WealthPilot is an Agentic AI application designed to help wealth managers proactively manage client portfolios. It combines real-time market data with client profiles to generate actionable insights.
 
 ## Features
-- **Dashboard**: High-level view of all clients with risk alerts.
-- **Client 360**: Detailed view of client portfolios with AI-driven analysis.
-- **AI Agent**: Chat with your data to ask specific questions (e.g., "How does the recent tech drop affect this client?").
-- **Market Intelligence**: Real-time tracking of key indices.
-- **Report Generation**: Export client summaries to PDF.
+- **Dashboard**: High-level view of all clients with risk alerts and demographics.
+- **Client 360**: Detailed view of client portfolios with enriched metadata (Ticker Names, Asset Categories).
+- **Proactive AI Agent**: Chat with your data to ask specific questions.
+- **Scenario Simulator ("Black Swan")**: Simulate market shocks (e.g., "Tech Crash 20%") and get an instant portfolio impact assessment.
+- **Strategy Crew (Multi-Agent)**: A dedicated team of AI agents (Market Analyst, Risk Manager, Wealth Manager) that collaboratively analyzes the portfolio and suggests opportunities.
+- **Real-Time Feedback**: Live status updates showing exactly which AI agent is working on your request.
+- **Market Intelligence**: Real-time tracking of key indices and individual stock histories.
+- **Report Generation**: Export comprehensive client summaries to PDF.
 
 ## Setup Instructions
 
@@ -21,7 +24,7 @@ WealthPilot is an Agentic AI application designed to help wealth managers proact
    ```bash
    python utils/data_generator.py
    ```
-   This will create `data/clients.csv` with realistic synthetic data.
+   This will create `data/clients.csv` with realistic synthetic data (diverse ages, portfolios).
 
 3. **Run the Application**:
    ```bash
@@ -33,10 +36,13 @@ WealthPilot is an Agentic AI application designed to help wealth managers proact
    - Enter it in the sidebar when the app launches.
 
 ## Tech Stack
-- **Frontend**: Streamlit
+- **Frontend**: Streamlit (Python) with Custom CSS
 - **Data**: Pandas, Faker (Synthetic), yfinance (Real Market Data)
-- **AI**: Google Gemini Pro
-- **Visualization**: Plotly
+- **AI Core**: Google Gemini 2.5 Flash (via `google-generativeai`)
+- **Agent Framework**: Custom Lightweight Multi-Agent Engine (mimicking CrewAI architecture)
+- **Visualization**: Plotly Express
+- **Reporting**: FPDF
+
 
 ## Hackathon Submission Details
 
@@ -60,7 +66,7 @@ WealthPilot is an Agentic AI application designed to help wealth managers proact
     *   **Client Data:** Synthetic high-fidelity data (Faker) mimicking real banking profiles.
     *   **Market Data:** Live stock prices and news via `yfinance` API.
 *   **Intelligence Layer:**
-    *   **LLM:** Google Gemini 1.5 Flash (via `google-generativeai`).
+    *   **LLM:** Google Gemini 2.5 Flash (via `google-generativeai`).
     *   **Agentic Logic:** Custom Python functions that chain data retrieval with LLM reasoning.
 
 ### 3. Prompts Used for the Solution

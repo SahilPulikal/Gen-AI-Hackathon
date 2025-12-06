@@ -20,7 +20,7 @@
     *   **Client Data:** Synthetic high-fidelity data (Faker) mimicking real banking profiles.
     *   **Market Data:** Live stock prices and news via `yfinance` API.
 *   **Intelligence Layer:**
-    *   **LLM:** Google Gemini 1.5 Flash (via `google-generativeai`).
+    *   **LLM:** Google Gemini 2.5 Flash (via `google-generativeai`).
     *   **Agentic Logic:** Custom Python functions that chain data retrieval with LLM reasoning.
 
 ## 3. Prompts Used for the Solution
