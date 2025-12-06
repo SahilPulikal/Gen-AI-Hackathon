@@ -1,101 +1,51 @@
-CustomerId,Surname,CreditScore,Geography,Gender,Age,Tenure,Balance,NumOfProducts,HasCrCard,IsActiveMember,EstimatedSalary,Exited,RiskProfile,Portfolio,FinancialGoal
-0be673fc-477f-4c2e-9a2f-cf44147d8af9,Ponce,606,UK,Female,84,3,48464.93,1,1,0,20484.6,0,Balanced,"{""VTI"": 12843.04, ""BND"": 10992.03, ""AAPL"": 11110.52, ""MSFT"": 12823.08, ""JPM"": 696.26}",Retirement
-e7e7b546-75f0-4109-8399-18f92886e7ab,Walker,433,UK,Female,86,0,220508.75,2,0,0,63973.73,0,Conservative,"{""BND"": 63673.95, ""VTI"": 58610.2, ""GLD"": 48140.68, ""KO"": 65491.11, ""JNJ"": 0}",Wealth Accumulation
-9da957ea-6c60-4beb-82a5-ca4d468fc7f9,Lewis,407,Germany,Male,65,9,9728.91,4,1,0,159629.9,0,Balanced,"{""VTI"": 1607.95, ""BND"": 1867.85, ""AAPL"": 1413.2, ""MSFT"": 1397.59, ""JPM"": 3442.33}",Education Fund
-ad154d66-7588-4ea0-be81-c40d01eee39f,Sellers,411,Spain,Female,27,6,112182.23,3,1,0,150609.46,0,Balanced,"{""VTI"": 23493.36, ""BND"": 24634.45, ""AAPL"": 26263.17, ""MSFT"": 32848.31, ""JPM"": 4942.94}",Wealth Accumulation
-f3df7311-21df-44d0-a131-419f5ee346f5,Williams,627,Spain,Female,32,2,37441.12,2,1,0,182306.59,0,Aggressive,"{""QQQ"": 6691.46, ""NVDA"": 7699.05, ""TSLA"": 6191.73, ""AMZN"": 8960.63, ""BTC-USD"": 7898.26}",Retirement
-d7513b59-6b0a-438a-98a7-e93e730fd414,Taylor,801,France,Male,60,9,81538.0,1,1,1,22473.61,0,Balanced,"{""VTI"": 15922.39, ""BND"": 20776.49, ""AAPL"": 16791.14, ""MSFT"": 12892.05, ""JPM"": 15155.93}",Home Purchase
-d5ce0c41-5a4e-4b65-96b9-8af715da5ec7,Williams,835,France,Female,72,2,126643.36,3,0,0,185438.31,0,Conservative,"{""BND"": 14109.37, ""VTI"": 17993.86, ""GLD"": 36678.8, ""KO"": 20897.71, ""JNJ"": 36963.62}",Education Fund
-353433d4-c46c-4a77-874e-f63d415dc517,Wilson,690,UK,Male,47,2,40077.35,2,1,0,155773.78,0,Conservative,"{""BND"": 8077.73, ""VTI"": 8426.17, ""GLD"": 4633.43, ""KO"": 11575.69, ""JNJ"": 7364.32}",Home Purchase
-9c791bdc-1094-4299-a550-de995f978a8f,Crawford,835,Spain,Female,45,5,208182.06,3,1,0,74810.4,0,Aggressive,"{""QQQ"": 46045.53, ""NVDA"": 53571.05, ""TSLA"": 54134.19, ""AMZN"": 56112.11, ""BTC-USD"": 0}",Travel
-5676e95a-afe4-4467-9726-c5a19e9224ea,Carson,449,USA,Female,85,2,237356.38,1,1,0,45336.74,0,Balanced,"{""VTI"": 42025.7, ""BND"": 57388.25, ""AAPL"": 52948.8, ""MSFT"": 43364.76, ""JPM"": 41628.88}",Home Purchase
-402d67d7-1250-44c6-ac65-86a577e38c37,Pennington,415,Germany,Male,43,7,242948.92,3,0,0,60562.06,0,Aggressive,"{""QQQ"": 50009.02, ""NVDA"": 40546.76, ""TSLA"": 45050.71, ""AMZN"": 58046.05, ""BTC-USD"": 49296.38}",Travel
-be8fb754-3472-48bd-9986-ca96253bc86e,Williams,573,Germany,Female,79,9,145463.16,1,1,1,99385.62,0,Balanced,"{""VTI"": 28530.59, ""BND"": 28475.99, ""AAPL"": 31412.09, ""MSFT"": 26978.21, ""JPM"": 30066.27}",Travel
-2b967881-7c6b-460e-857f-8e003a0be304,Martinez,585,Spain,Male,66,9,177434.72,4,1,1,150612.27,0,Balanced,"{""VTI"": 24630.29, ""BND"": 48999.06, ""AAPL"": 52273.62, ""MSFT"": 48580.59, ""JPM"": 2951.17}",Home Purchase
-09d1fbb3-c9bb-4717-bc98-0cf3e8e92f28,Mcdonald,476,France,Male,73,7,141412.14,3,0,0,74445.54,0,Balanced,"{""VTI"": 18666.04, ""BND"": 33159.53, ""AAPL"": 17267.23, ""MSFT"": 16223.81, ""JPM"": 56095.53}",Retirement
-169aef24-fbf8-4519-9902-6370b43d22d2,Burgess,712,UK,Male,66,2,229879.86,1,0,1,127076.09,0,Balanced,"{""VTI"": 52168.73, ""BND"": 50971.24, ""AAPL"": 45705.28, ""MSFT"": 29599.25, ""JPM"": 51435.36}",Retirement
-1097c2ba-b54c-4775-bfd2-c167c67ef519,Warren,380,Germany,Female,18,10,34314.64,2,1,0,162146.27,0,Aggressive,"{""QQQ"": 5723.72, ""NVDA"": 7585.17, ""TSLA"": 4204.78, ""AMZN"": 7228.93, ""BTC-USD"": 9572.03}",Travel
-bfd60f50-c45f-4458-a90a-7e37b4540045,Griffin,847,USA,Male,72,3,35095.22,1,1,1,172932.32,0,Balanced,"{""VTI"": 10320.12, ""BND"": 6959.18, ""AAPL"": 4014.44, ""MSFT"": 6965.98, ""JPM"": 6835.5}",Wealth Accumulation
-59516708-5151-45e9-9c96-a12581a3f6ca,Stanton,635,USA,Female,72,6,216882.07,2,0,1,153533.84,0,Balanced,"{""VTI"": 38273.53, ""BND"": 55850.88, ""AAPL"": 40642.5, ""MSFT"": 48570.88, ""JPM"": 33544.28}",Wealth Accumulation
-b2e0de4e-3925-414c-9756-b44344b20d91,Hickman,661,UK,Female,29,2,16314.0,3,1,0,172414.43,0,Aggressive,"{""QQQ"": 4733.48, ""NVDA"": 3156.65, ""TSLA"": 3773.49, ""AMZN"": 4340.88, ""BTC-USD"": 309.5}",Travel
-a4849791-63d2-4016-858e-c415e119a8e3,Wilson,576,USA,Female,77,0,195099.11,4,1,0,162089.64,0,Conservative,"{""BND"": 26666.2, ""VTI"": 26579.57, ""GLD"": 43036.02, ""KO"": 41860.11, ""JNJ"": 56957.22}",Education Fund
-fb347cae-9b2d-491f-bca1-064b6e5c2b62,Mccarthy,376,UK,Male,71,2,84277.96,3,1,1,138693.03,0,Conservative,"{""BND"": 12077.33, ""VTI"": 24239.49, ""GLD"": 9778.21, ""KO"": 21747.86, ""JNJ"": 16435.07}",Home Purchase
-e3bcc794-3a8e-46c3-b7e6-7ab173a6a782,Beck,711,USA,Female,49,6,210473.38,1,0,1,96837.35,0,Balanced,"{""VTI"": 47410.35, ""BND"": 33085.61, ""AAPL"": 54118.31, ""MSFT"": 44851.6, ""JPM"": 31007.51}",Wealth Accumulation
-c0a4171e-0309-45af-9b2c-b1be18b7570e,Gilmore,403,Germany,Male,66,4,136675.52,4,0,1,132975.82,0,Conservative,"{""BND"": 15216.59, ""VTI"": 21392.26, ""GLD"": 22307.86, ""KO"": 22751.94, ""JNJ"": 55006.87}",Travel
-46db97f7-c87a-4065-ba56-85efefd5a04e,Solis,821,Spain,Male,32,5,165080.38,1,0,1,122061.28,0,Aggressive,"{""QQQ"": 46534.0, ""NVDA"": 27891.14, ""TSLA"": 33063.98, ""AMZN"": 41414.24, ""BTC-USD"": 16177.02}",Retirement
-95399c36-5dbd-402e-b2c1-3cbd58cc4be2,Bird,612,Germany,Male,45,4,197137.61,2,1,1,97189.46,0,Conservative,"{""BND"": 22528.7, ""VTI"": 41636.13, ""GLD"": 54940.86, ""KO"": 42696.73, ""JNJ"": 35335.2}",Wealth Accumulation
-93b4f6ff-5fff-44d6-bdc8-0c68f063415e,Tran,671,France,Female,27,6,196160.21,3,0,1,48440.24,0,Balanced,"{""VTI"": 41025.69, ""BND"": 48644.07, ""AAPL"": 43954.75, ""MSFT"": 32287.86, ""JPM"": 30247.85}",Home Purchase
-b83dbcdb-58a2-4d9e-80f9-b6e887c5cb9c,Wagner,596,USA,Female,32,7,164779.66,2,1,0,25434.24,0,Aggressive,"{""QQQ"": 27451.25, ""NVDA"": 29803.1, ""TSLA"": 35812.95, ""AMZN"": 34490.94, ""BTC-USD"": 37221.42}",Home Purchase
-f5b87607-a6ca-4751-b434-8b840e7bca92,Roy,415,France,Female,33,5,189319.55,2,1,1,54521.84,0,Balanced,"{""VTI"": 28653.65, ""BND"": 25916.7, ""AAPL"": 23406.41, ""MSFT"": 42626.63, ""JPM"": 68716.16}",Wealth Accumulation
-a2211e84-4b3b-4242-b4a0-34ad7532d489,Glenn,819,France,Male,81,10,183154.53,1,0,1,152863.09,0,Conservative,"{""BND"": 28882.08, ""VTI"": 36597.44, ""GLD"": 48357.94, ""KO"": 50348.96, ""JNJ"": 18968.11}",Education Fund
-f3d0fa5c-e276-46ba-980a-00190710a99b,Dean,622,USA,Male,67,5,166514.98,3,0,0,117042.86,0,Conservative,"{""BND"": 27655.26, ""VTI"": 49413.94, ""GLD"": 20958.32, ""KO"": 20531.07, ""JNJ"": 47956.39}",Wealth Accumulation
-8ef1c9fa-3f25-425e-be2b-6d7699973a42,Campos,833,Germany,Male,31,0,135223.22,1,1,1,94778.61,0,Balanced,"{""VTI"": 28247.54, ""BND"": 26394.12, ""AAPL"": 29158.81, ""MSFT"": 22898.76, ""JPM"": 28523.99}",Wealth Accumulation
-1d9efa66-99fb-49a2-8e28-c054d9cbb170,Snyder,587,USA,Female,89,3,5452.42,3,0,1,189913.48,0,Balanced,"{""VTI"": 1202.34, ""BND"": 565.91, ""AAPL"": 1414.26, ""MSFT"": 902.92, ""JPM"": 1366.98}",Retirement
-482a5f4b-5f4f-4d62-8889-8848b357f4cd,Adams,578,Spain,Female,76,10,247692.25,3,0,0,36950.04,0,Balanced,"{""VTI"": 42346.62, ""BND"": 49619.96, ""AAPL"": 43307.64, ""MSFT"": 39340.04, ""JPM"": 73077.99}",Home Purchase
-78bbaf37-b4a3-436e-a675-22cad5a314ac,Perez,525,Germany,Male,54,4,225557.21,3,1,1,128818.46,0,Balanced,"{""VTI"": 52067.88, ""BND"": 34755.2, ""AAPL"": 49387.6, ""MSFT"": 43645.41, ""JPM"": 45701.12}",Wealth Accumulation
-52f98eb9-eefa-4f66-890e-3a9ea34c27a6,Nelson,484,UK,Male,38,2,76396.24,4,0,1,129635.61,0,Balanced,"{""VTI"": 7963.38, ""BND"": 10251.17, ""AAPL"": 10216.58, ""MSFT"": 12363.15, ""JPM"": 35601.95}",Home Purchase
-22900609-557f-42ae-ad8a-2b79b72c598d,Alvarado,843,UK,Female,46,4,44260.72,2,0,0,156312.04,0,Aggressive,"{""QQQ"": 5114.07, ""NVDA"": 9908.08, ""TSLA"": 5442.68, ""AMZN"": 8629.49, ""BTC-USD"": 15166.39}",Wealth Accumulation
-d0e1e798-40f1-4695-ac99-8c32a81ecde9,Baker,541,Spain,Male,81,6,238129.75,2,0,0,65254.51,0,Balanced,"{""VTI"": 26051.7, ""BND"": 64859.97, ""AAPL"": 28427.45, ""MSFT"": 41143.87, ""JPM"": 77646.76}",Home Purchase
-e987eced-c350-41f1-9bef-4a7d1833152b,Mahoney,608,France,Male,70,1,234796.74,2,0,0,49516.09,0,Conservative,"{""BND"": 35927.73, ""VTI"": 32022.95, ""GLD"": 58424.92, ""KO"": 30976.75, ""JNJ"": 77444.4}",Retirement
-ba0fd74e-538f-4d88-a2b3-0b63e2e99770,Horton,527,Spain,Female,80,4,109783.75,2,0,0,60033.33,0,Conservative,"{""BND"": 25207.34, ""VTI"": 11175.58, ""GLD"": 17630.05, ""KO"": 17732.46, ""JNJ"": 38038.32}",Wealth Accumulation
-3a515a4d-8184-43fa-b9ee-13d91768fa8e,Robinson,494,USA,Male,44,0,91559.05,1,1,0,97901.65,0,Balanced,"{""VTI"": 12575.42, ""BND"": 19690.69, ""AAPL"": 11692.09, ""MSFT"": 22509.62, ""JPM"": 25091.24}",Retirement
-8fa22c7d-1dcc-457e-9fce-0f073d16e1be,Reilly,401,France,Male,38,8,68549.15,1,0,1,162901.61,0,Balanced,"{""VTI"": 7801.0, ""BND"": 10756.08, ""AAPL"": 19116.59, ""MSFT"": 19287.94, ""JPM"": 11587.54}",Travel
-332cc8d4-a116-4205-840b-cae78d8c6d23,Gonzales,382,Germany,Female,55,9,133994.77,3,1,1,199605.18,0,Balanced,"{""VTI"": 13802.17, ""BND"": 31766.87, ""AAPL"": 32062.11, ""MSFT"": 29275.99, ""JPM"": 27087.64}",Travel
-cad9d94f-7d30-42be-b303-c78fc93959bf,Duffy,518,UK,Male,86,3,119786.65,3,1,1,155180.39,0,Conservative,"{""BND"": 35008.15, ""VTI"": 29129.25, ""GLD"": 33176.25, ""KO"": 34094.96, ""JNJ"": 0}",Wealth Accumulation
-fcbaa9ba-3ec7-4f35-a16f-f78c3621ecdf,Casey,538,UK,Male,77,10,209855.11,4,1,0,32332.53,0,Balanced,"{""VTI"": 47205.6, ""BND"": 53866.13, ""AAPL"": 61068.75, ""MSFT"": 27937.4, ""JPM"": 19777.22}",Education Fund
-f1f06a8c-27c9-4f26-af4f-8a9a77cc4d3a,Graham,491,France,Male,75,10,5730.09,4,1,0,74320.37,0,Balanced,"{""VTI"": 860.88, ""BND"": 1419.3, ""AAPL"": 918.88, ""MSFT"": 1116.64, ""JPM"": 1414.39}",Travel
-8174d988-655a-4c5e-988a-b0fb508ac4dc,Kelly,795,France,Female,83,1,103883.49,1,1,0,168125.29,0,Conservative,"{""BND"": 26017.97, ""VTI"": 10642.62, ""GLD"": 25377.53, ""KO"": 25911.68, ""JNJ"": 15933.68}",Wealth Accumulation
-71bc82e9-1614-40f3-ab3a-e88f18ea0c98,York,497,Germany,Female,24,8,69820.23,2,0,0,98621.72,0,Aggressive,"{""QQQ"": 19278.78, ""NVDA"": 18204.57, ""TSLA"": 15022.01, ""AMZN"": 13422.89, ""BTC-USD"": 3891.98}",Wealth Accumulation
-0617321e-2bf9-4111-a524-16ed95e60048,Chapman,795,Spain,Male,58,1,76710.62,2,1,0,42406.22,0,Aggressive,"{""QQQ"": 20720.8, ""NVDA"": 17496.48, ""TSLA"": 8372.17, ""AMZN"": 21827.05, ""BTC-USD"": 8294.13}",Education Fund
-764434d2-a6eb-4dba-b11d-f6285a5d367a,Jones,629,UK,Male,58,7,121917.71,1,0,1,161057.39,0,Aggressive,"{""QQQ"": 27620.8, ""NVDA"": 32838.17, ""TSLA"": 24462.98, ""AMZN"": 34479.2, ""BTC-USD"": 2516.56}",Home Purchase
-12472a80-9dfd-4df7-ab8b-2199664cfe89,Silva,584,Germany,Female,64,6,212224.94,3,0,1,151644.28,0,Conservative,"{""BND"": 60376.85, ""VTI"": 59480.2, ""GLD"": 26527.52, ""KO"": 25547.9, ""JNJ"": 40292.46}",Retirement
-75d1211b-aa87-40aa-9a85-8c6c6049d264,Peters,449,USA,Female,75,10,78454.32,4,0,0,42433.33,0,Balanced,"{""VTI"": 19505.84, ""BND"": 20579.66, ""AAPL"": 15648.06, ""MSFT"": 20834.97, ""JPM"": 1885.79}",Retirement
-bcf5a62d-f59e-4fc3-ac6c-7c4c83d73bbd,Cooley,828,UK,Male,85,8,229535.52,4,1,1,189937.48,0,Balanced,"{""VTI"": 37722.15, ""BND"": 48146.78, ""AAPL"": 33617.97, ""MSFT"": 58865.25, ""JPM"": 51183.37}",Wealth Accumulation
-514518f7-91c9-4876-842e-35413d73e36a,Bridges,608,USA,Female,63,0,209730.48,1,0,1,101796.51,0,Conservative,"{""BND"": 29249.11, ""VTI"": 62136.6, ""GLD"": 38286.01, ""KO"": 62121.7, ""JNJ"": 17937.07}",Home Purchase
-4f13fc65-fb64-448d-bf33-4ef61d52e9c8,Andersen,471,Germany,Male,54,1,38547.47,1,1,0,134154.93,0,Aggressive,"{""QQQ"": 5410.16, ""NVDA"": 11197.47, ""TSLA"": 9053.62, ""AMZN"": 5676.53, ""BTC-USD"": 7209.69}",Education Fund
-9fc8b89c-57ac-4e5f-b439-cd25923174c8,Casey,713,UK,Female,65,6,248096.11,1,1,1,55751.14,0,Balanced,"{""VTI"": 43192.18, ""BND"": 61173.7, ""AAPL"": 34678.72, ""MSFT"": 71646.95, ""JPM"": 37404.57}",Retirement
-92873206-d585-430a-8b2c-80c537f16cad,Maxwell,813,France,Male,23,6,28258.68,2,1,0,89284.77,0,Balanced,"{""VTI"": 3864.72, ""BND"": 6686.45, ""AAPL"": 3748.7, ""MSFT"": 7752.97, ""JPM"": 6205.84}",Retirement
-2dbd306a-95f8-42fe-b048-725359c79732,Padilla,637,USA,Female,21,5,186513.73,4,0,1,177577.41,0,Balanced,"{""VTI"": 35889.98, ""BND"": 45910.45, ""AAPL"": 23989.81, ""MSFT"": 22801.63, ""JPM"": 57921.86}",Wealth Accumulation
-ed86ec0c-57d7-43e4-9b54-3335f8f447a0,Hurst,766,Spain,Female,69,1,118207.57,1,1,1,69335.53,0,Conservative,"{""BND"": 33434.88, ""VTI"": 18488.99, ""GLD"": 14770.15, ""KO"": 27167.57, ""JNJ"": 24345.97}",Education Fund
-a6fe246f-1e45-4fed-8427-d0de914bb649,Sherman,807,USA,Female,88,4,158506.67,1,1,0,58798.15,0,Balanced,"{""VTI"": 30202.46, ""BND"": 36929.73, ""AAPL"": 46739.68, ""MSFT"": 47078.47, ""JPM"": 0}",Wealth Accumulation
-0c4773ea-f8f7-4fb7-a387-c7dce384bafa,Whitaker,775,Germany,Male,42,8,145997.66,2,0,1,140984.86,0,Conservative,"{""BND"": 38226.0, ""VTI"": 38266.65, ""GLD"": 24812.93, ""KO"": 31239.89, ""JNJ"": 13452.19}",Travel
-eb7aaa17-fe65-4266-b47b-2c44b283d15d,Smith,815,USA,Female,75,9,68127.64,3,1,1,63126.93,0,Balanced,"{""VTI"": 18826.63, ""BND"": 17030.34, ""AAPL"": 15785.37, ""MSFT"": 15226.73, ""JPM"": 1258.58}",Retirement
-baa1deea-c978-46c1-b30d-a4bf4d79da85,Day,386,France,Female,21,6,196566.05,3,0,0,167922.24,0,Balanced,"{""VTI"": 56294.91, ""BND"": 41410.31, ""AAPL"": 32226.39, ""MSFT"": 49837.13, ""JPM"": 16797.3}",Travel
-03a0dac7-d19d-4a81-94ae-5b128095733d,Cole,625,France,Male,39,2,143874.54,4,1,0,179075.48,0,Conservative,"{""BND"": 21789.64, ""VTI"": 23600.39, ""GLD"": 18891.87, ""KO"": 26006.4, ""JNJ"": 53586.24}",Home Purchase
-c7731561-0305-4412-b72e-c0ea0bed72e4,Gutierrez,710,France,Male,65,5,221928.95,3,1,1,61105.91,0,Conservative,"{""BND"": 60458.77, ""VTI"": 47391.24, ""GLD"": 33022.64, ""KO"": 45251.46, ""JNJ"": 35804.84}",Wealth Accumulation
-65f005eb-e67f-46d2-b228-12bd30a5e033,Price,435,France,Male,30,8,188898.14,4,1,1,199923.94,0,Balanced,"{""VTI"": 21390.58, ""BND"": 29890.11, ""AAPL"": 32907.21, ""MSFT"": 24744.59, ""JPM"": 79965.65}",Travel
-99758a6c-a93f-41bd-a177-b07e705ddde3,Silva,673,Spain,Female,29,3,72022.62,4,1,1,91709.14,0,Balanced,"{""VTI"": 16801.61, ""BND"": 14276.04, ""AAPL"": 7813.74, ""MSFT"": 8351.64, ""JPM"": 24779.59}",Education Fund
-816d0d66-bc33-4548-9604-5d398b33e3f5,Frazier,714,USA,Male,48,6,84350.69,2,0,1,188095.29,0,Balanced,"{""VTI"": 10911.87, ""BND"": 16393.86, ""AAPL"": 23075.25, ""MSFT"": 23486.06, ""JPM"": 10483.65}",Retirement
-10b73d19-2f47-4c4f-8fd3-1e4bb3418272,Williams,406,USA,Male,32,0,134452.49,1,1,1,69751.97,0,Aggressive,"{""QQQ"": 15299.57, ""NVDA"": 21823.35, ""TSLA"": 21520.88, ""AMZN"": 18981.15, ""BTC-USD"": 56827.55}",Education Fund
-0ff70acd-7122-434a-9c6e-d7fecff42ebf,Stark,356,UK,Male,20,4,230340.27,1,1,1,71988.84,0,Aggressive,"{""QQQ"": 34933.03, ""NVDA"": 32692.42, ""TSLA"": 63705.72, ""AMZN"": 66729.45, ""BTC-USD"": 32279.64}",Retirement
-b22f08d3-887e-4690-95a6-eb16b7b114e8,Phillips,575,USA,Female,90,0,53056.23,3,0,1,96128.17,0,Balanced,"{""VTI"": 6821.95, ""BND"": 11996.59, ""AAPL"": 5927.1, ""MSFT"": 8278.8, ""JPM"": 20031.79}",Home Purchase
-df9d33db-6e3b-44ae-bb02-147c512f6df2,Adkins,417,Germany,Male,73,0,100708.24,2,0,1,123533.29,0,Balanced,"{""VTI"": 11399.96, ""BND"": 29622.33, ""AAPL"": 15620.47, ""MSFT"": 20992.19, ""JPM"": 23073.3}",Retirement
-1ad9e7a7-ca10-404a-b855-d18b25a24954,Johnson,417,France,Female,39,2,247913.0,4,0,0,37640.62,0,Balanced,"{""VTI"": 51145.17, ""BND"": 60785.53, ""AAPL"": 71298.25, ""MSFT"": 34078.87, ""JPM"": 30605.19}",Travel
-28954ecf-7f9d-41a6-b94a-36242d648fac,Smith,521,France,Male,27,5,163738.08,2,0,1,136383.89,0,Balanced,"{""VTI"": 42590.37, ""BND"": 30380.15, ""AAPL"": 30352.48, ""MSFT"": 19597.55, ""JPM"": 40817.54}",Wealth Accumulation
-84bece6e-90a9-445d-bea8-8d26d099c2e8,Douglas,491,Spain,Male,35,9,30845.08,1,0,0,145383.76,0,Conservative,"{""BND"": 6587.87, ""VTI"": 7119.97, ""GLD"": 7918.93, ""KO"": 4766.68, ""JNJ"": 4451.62}",Wealth Accumulation
-01431f57-6666-4b03-a592-0e8e799ee98b,Rhodes,398,USA,Male,84,2,191496.5,1,1,1,89739.39,0,Balanced,"{""VTI"": 25119.46, ""BND"": 41020.22, ""AAPL"": 31063.64, ""MSFT"": 37673.61, ""JPM"": 56619.56}",Wealth Accumulation
-8ad58918-883b-459d-b1bb-e37851449e77,Williams,615,USA,Female,44,3,174765.97,3,0,1,64126.38,0,Aggressive,"{""QQQ"": 44398.23, ""NVDA"": 30424.18, ""TSLA"": 23902.57, ""AMZN"": 33536.48, ""BTC-USD"": 42504.5}",Education Fund
-0405953e-8ed2-43a8-b0f3-97cc1c3906dc,Montgomery,466,Spain,Male,45,2,227128.4,3,1,0,165950.94,0,Balanced,"{""VTI"": 38946.87, ""BND"": 56318.71, ""AAPL"": 32262.43, ""MSFT"": 31056.61, ""JPM"": 68543.79}",Education Fund
-9a6d9644-d89e-4e26-a4ed-ee2efe4a90bf,Russo,436,UK,Male,78,2,20848.93,1,0,1,27090.98,0,Conservative,"{""BND"": 3979.2, ""VTI"": 3176.0, ""GLD"": 5230.05, ""KO"": 4780.42, ""JNJ"": 3683.27}",Travel
-c45bb3b1-9c9a-4455-bb43-7f1c30e3afab,Chambers,808,USA,Male,30,7,104295.84,4,0,0,25155.41,0,Aggressive,"{""QQQ"": 11652.13, ""NVDA"": 27549.85, ""TSLA"": 19130.44, ""AMZN"": 26395.61, ""BTC-USD"": 19567.81}",Travel
-8cb22869-e0a2-4086-8371-79807ce9a2bb,Thomas,478,Spain,Male,35,0,3803.08,3,0,0,27054.72,0,Conservative,"{""BND"": 1086.29, ""VTI"": 530.57, ""GLD"": 380.81, ""KO"": 516.33, ""JNJ"": 1289.09}",Education Fund
-9b0aeebb-2d25-4bf2-8925-ebff4e27a8ef,Jones,587,UK,Female,88,7,22721.28,4,1,0,151109.24,0,Balanced,"{""VTI"": 6160.15, ""BND"": 3244.62, ""AAPL"": 4953.2, ""MSFT"": 5455.02, ""JPM"": 2908.29}",Home Purchase
-c1c2eaf9-7c0e-4b55-aec8-229b60a621c8,Klein,691,UK,Female,85,6,131872.62,2,0,1,135130.33,0,Balanced,"{""VTI"": 37153.4, ""BND"": 33273.11, ""AAPL"": 35297.88, ""MSFT"": 38147.86, ""JPM"": 0}",Retirement
-5aa5c946-16e3-4df3-9bf0-70793e8c0190,Parks,521,USA,Female,27,10,243702.43,2,1,0,123688.09,0,Balanced,"{""VTI"": 36194.19, ""BND"": 34707.68, ""AAPL"": 33399.94, ""MSFT"": 36065.66, ""JPM"": 103334.96}",Home Purchase
-d716e4da-a84e-4899-be78-dd8cc4233c9b,Stout,824,USA,Male,50,1,56597.72,3,0,1,51634.11,0,Conservative,"{""BND"": 15744.55, ""VTI"": 5679.96, ""GLD"": 6220.57, ""KO"": 10700.21, ""JNJ"": 18252.43}",Home Purchase
-496d488a-32a5-4b4e-b18a-4860c40418a2,Webb,814,Germany,Female,36,1,10958.67,1,1,1,196968.76,0,Conservative,"{""BND"": 2221.72, ""VTI"": 1154.42, ""GLD"": 1368.03, ""KO"": 1495.28, ""JNJ"": 4719.22}",Home Purchase
-e1790b4c-7030-44b0-8a34-a58e16089974,Moody,754,Germany,Male,45,0,123440.07,4,0,1,157098.85,0,Aggressive,"{""QQQ"": 28153.19, ""NVDA"": 26987.31, ""TSLA"": 21354.28, ""AMZN"": 31617.76, ""BTC-USD"": 15327.54}",Retirement
-5cb36882-687e-4765-8e18-6d7968389e57,Kelly,581,Germany,Female,30,2,75245.8,1,1,0,51902.29,0,Aggressive,"{""QQQ"": 11135.0, ""NVDA"": 8932.34, ""TSLA"": 8400.31, ""AMZN"": 19589.18, ""BTC-USD"": 27188.98}",Retirement
-fc0855aa-59ac-48fa-96b2-0ccdc4f56c18,Phillips,830,UK,Female,81,5,97764.69,4,0,1,196098.23,0,Balanced,"{""VTI"": 16932.71, ""BND"": 16788.91, ""AAPL"": 28511.4, ""MSFT"": 23851.61, ""JPM"": 11680.06}",Education Fund
-c1d240d1-2478-4428-bfd2-7e778b777fd5,Spencer,408,Spain,Male,69,9,149638.91,1,1,0,74481.67,0,Balanced,"{""VTI"": 34189.74, ""BND"": 16637.56, ""AAPL"": 16138.67, ""MSFT"": 34881.31, ""JPM"": 47791.63}",Retirement
-037e87a9-3ab8-4a55-b554-7acffabeb9b2,Clark,736,UK,Female,82,3,81680.72,4,0,0,77336.34,0,Conservative,"{""BND"": 11589.86, ""VTI"": 8228.32, ""GLD"": 20810.6, ""KO"": 10726.89, ""JNJ"": 30325.05}",Education Fund
-8513de8e-5a49-4626-81db-d2a7c6c98075,Myers,567,Germany,Male,26,6,102373.47,1,0,1,88005.82,0,Aggressive,"{""QQQ"": 13321.23, ""NVDA"": 22007.97, ""TSLA"": 15942.68, ""AMZN"": 18504.68, ""BTC-USD"": 32596.91}",Education Fund
-75d279f5-367b-41e5-aae3-793ed310bbe0,Davidson,372,Spain,Female,49,1,168824.88,4,1,1,96377.85,0,Conservative,"{""BND"": 49087.09, ""VTI"": 38258.99, ""GLD"": 38218.82, ""KO"": 49038.85, ""JNJ"": 0}",Wealth Accumulation
-782a0484-3a88-4b99-ba67-56ec9cdb613b,Solis,827,France,Female,22,6,180567.6,1,1,0,165880.04,0,Aggressive,"{""QQQ"": 51405.8, ""NVDA"": 53581.62, ""TSLA"": 48634.81, ""AMZN"": 39319.67, ""BTC-USD"": 0}",Retirement
-e367289b-36ba-4ca9-86b2-65bcb3f3cb67,Gibson,754,Germany,Male,23,4,239477.07,4,1,0,110393.5,0,Balanced,"{""VTI"": 63428.12, ""BND"": 24637.25, ""AAPL"": 36380.36, ""MSFT"": 51378.8, ""JPM"": 63652.54}",Education Fund
-f7409c89-542d-4f81-a7ee-dc8f7a68244b,Wilson,646,Spain,Female,61,9,169623.34,2,1,0,41395.65,0,Balanced,"{""VTI"": 27946.69, ""BND"": 29264.13, ""AAPL"": 43177.17, ""MSFT"": 35019.47, ""JPM"": 34215.88}",Retirement
-82c0958d-3fc6-4033-a4af-de8376f3e3e0,Schultz,578,France,Female,82,7,189883.16,2,1,1,54104.59,0,Conservative,"{""BND"": 31757.23, ""VTI"": 42877.12, ""GLD"": 28727.08, ""KO"": 53460.81, ""JNJ"": 33060.92}",Home Purchase
-46e5c056-7505-4a7e-b06c-b2685fa05a76,Gonzalez,624,France,Male,25,4,77651.63,2,1,0,71115.87,0,Aggressive,"{""QQQ"": 22816.54, ""NVDA"": 9830.29, ""TSLA"": 19121.75, ""AMZN"": 8935.81, ""BTC-USD"": 16947.25}",Home Purchase
-887189ee-3598-4a1e-a966-651cdfcf664b,Brown,528,Germany,Male,89,0,232287.61,2,1,0,187877.82,0,Conservative,"{""BND"": 49134.86, ""VTI"": 57265.33, ""GLD"": 29940.53, ""KO"": 26381.54, ""JNJ"": 69565.34}",Wealth Accumulation
-ada76dfb-e01d-4804-9283-715944ee39dc,Sullivan,705,Germany,Male,71,2,2759.48,1,0,0,189364.55,0,Balanced,"{""VTI"": 367.32, ""BND"": 642.49, ""AAPL"": 334.04, ""MSFT"": 533.34, ""JPM"": 882.28}",Retirement
-bf0ccad8-2b40-4093-969d-bbb0839c2333,Santiago,420,Spain,Male,74,3,172395.52,2,0,0,77339.73,0,Balanced,"{""VTI"": 25666.42, ""BND"": 36713.14, ""AAPL"": 34209.51, ""MSFT"": 20648.56, ""JPM"": 55157.89}",Travel
+CustomerId,Surname,CreditScore,Geography,Gender,Age,Tenure,Balance,NumOfProducts,HasCrCard,IsActiveMember,EstimatedSalary,Exited,RiskProfile,FinancialGoal,Portfolio
+65c8702f,Garcia,713,"Washington, USA",Male,25,8,97518,2,1,1,56826,0,Growth,Long-term Growth,"{""NFLX"": 28, ""GOOGL"": 174, ""AMD"": 185, ""AAPL"": 107, ""AMZN"": 314}"
+4b14f110,Craig,751,"New York, USA",Male,66,2,3474348,5,1,1,167468,0,Aggressive,Aggressive Growth,"{""GOOGL"": 357, ""TSLA"": 384, ""META"": 375, ""AAPL"": 98, ""NVDA"": 125}"
+fea33f77,Kirby,662,"Washington, USA",Male,70,5,1514164,2,1,1,209168,0,Aggressive,Long-term Growth,"{""TSLA"": 69, ""QQQ"": 59, ""GOOGL"": 309, ""META"": 499, ""NFLX"": 300}"
+ba12bf7f,Hensley,831,"Florida, USA",Male,39,1,904894,5,1,1,186331,0,Growth,Long-term Growth,"{""QQQ"": 328, ""NVDA"": 351, ""GOOGL"": 409, ""TSLA"": 380}"
+15a1e605,Richard,825,"New York, USA",Female,38,4,1052463,2,1,1,136497,0,Aggressive,Wealth Accumulation,"{""GOOGL"": 179, ""META"": 425, ""NFLX"": 234, ""QQQ"": 339, ""AMD"": 357, ""MSFT"": 14}"
+595eb4d1,Wilson,845,"Washington, USA",Female,29,12,114976,2,1,1,84212,0,Moderate,Tech-focused Portfolio,"{""GOOGL"": 140, ""MSFT"": 80, ""AMZN"": 479, ""AMD"": 92, ""META"": 481, ""TSLA"": 257}"
+9db0b5cd,Johnston,648,"California, USA",Male,44,13,918543,3,1,1,213271,0,Aggressive,Tech-focused Portfolio,"{""AMZN"": 394, ""QQQ"": 34, ""META"": 49, ""AAPL"": 459}"
+95b7e0cc,Alvarado,787,"Washington, USA",Male,34,15,954952,2,1,1,283118,0,Moderate,Tech-focused Portfolio,"{""AAPL"": 287, ""TSLA"": 14, ""GOOGL"": 40, ""MSFT"": 191, ""NFLX"": 205}"
+2ecaa7da,Sharp,792,"New York, USA",Male,53,10,4556876,3,1,1,211867,0,Moderate,Long-term Growth,"{""AMD"": 399, ""NVDA"": 205, ""QQQ"": 414, ""AAPL"": 141}"
+cc1b2513,Mueller,665,"Texas, USA",Male,24,5,83649,5,1,1,88411,0,Growth,Aggressive Growth,"{""GOOGL"": 247, ""TSLA"": 148, ""AMD"": 305, ""AAPL"": 292, ""MSFT"": 272, ""QQQ"": 94}"
+4c5eb680,Tapia,704,"Florida, USA",Male,55,8,2004198,5,1,1,165787,0,Moderate,Long-term Growth,"{""GOOGL"": 150, ""TSLA"": 220, ""AAPL"": 178, ""META"": 281, ""AMZN"": 325}"
+22b5d1ab,Rogers,666,"California, USA",Male,25,10,56520,4,1,1,53675,0,Aggressive,Tech-focused Portfolio,"{""TSLA"": 488, ""MSFT"": 498, ""META"": 172, ""QQQ"": 245}"
+d23e87db,Lane,673,"New York, USA",Male,75,2,4124988,3,1,1,135292,0,Aggressive,Wealth Accumulation,"{""MSFT"": 107, ""META"": 12, ""QQQ"": 423, ""AMZN"": 415, ""TSLA"": 37, ""GOOGL"": 280}"
+e7b315f1,Gray,791,"Florida, USA",Female,33,3,283688,2,1,1,158658,0,Growth,Tech-focused Portfolio,"{""MSFT"": 238, ""NVDA"": 423, ""NFLX"": 495, ""AMD"": 285, ""AAPL"": 465}"
+58e843a4,Carlson,718,"California, USA",Female,62,6,2430533,4,1,1,177061,0,Growth,Tech-focused Portfolio,"{""GOOGL"": 162, ""AAPL"": 220, ""TSLA"": 461, ""NVDA"": 44}"
+190be877,Chapman,722,"New York, USA",Male,36,8,904993,5,1,1,314156,0,Aggressive,Tech-focused Portfolio,"{""NVDA"": 82, ""AAPL"": 289, ""NFLX"": 282, ""MSFT"": 218, ""TSLA"": 262, ""GOOGL"": 75}"
+1f1b81a4,Phillips,822,"Florida, USA",Female,44,8,759962,3,1,1,299221,0,Aggressive,Wealth Accumulation,"{""NVDA"": 498, ""NFLX"": 36, ""TSLA"": 107, ""QQQ"": 440, ""AAPL"": 302}"
+e80dba38,Khan,802,"New York, USA",Male,69,10,3685456,4,1,1,211906,0,Moderate,Long-term Growth,"{""AMZN"": 341, ""TSLA"": 25, ""NFLX"": 286, ""QQQ"": 199, ""META"": 109}"
+e3b8c99e,Hardy,804,"Florida, USA",Male,40,8,1099507,4,1,1,281418,0,Aggressive,Wealth Accumulation,"{""NFLX"": 329, ""NVDA"": 467, ""QQQ"": 229, ""GOOGL"": 276}"
+06931583,Martinez,694,"Texas, USA",Male,37,11,655444,2,1,1,255537,0,Moderate,Long-term Growth,"{""MSFT"": 33, ""AMD"": 59, ""QQQ"": 435, ""AMZN"": 71}"
+63fa0988,Harrison,669,"Washington, USA",Male,51,15,4599616,2,1,1,148976,0,Moderate,Tech-focused Portfolio,"{""NFLX"": 81, ""AAPL"": 256, ""AMD"": 40, ""GOOGL"": 255}"
+fcf74400,Rogers,748,"Washington, USA",Female,40,9,922949,2,1,1,213977,0,Aggressive,Long-term Growth,"{""GOOGL"": 105, ""NFLX"": 380, ""TSLA"": 487, ""AMZN"": 226}"
+6c2cf3e7,Page,678,"New York, USA",Female,30,14,1486944,4,1,1,190994,0,Growth,Long-term Growth,"{""TSLA"": 264, ""AAPL"": 484, ""GOOGL"": 257, ""AMD"": 364}"
+250c31de,Osborn,632,"Texas, USA",Female,54,9,3058494,5,1,1,170820,0,Growth,Wealth Accumulation,"{""QQQ"": 156, ""MSFT"": 372, ""TSLA"": 274, ""AMD"": 308, ""AAPL"": 124, ""NFLX"": 496}"
+e1d4c54b,Dillon,839,"Washington, USA",Male,54,10,1714866,4,1,1,244833,0,Growth,Aggressive Growth,"{""AMZN"": 307, ""GOOGL"": 277, ""TSLA"": 148, ""NVDA"": 351}"
+52ac0d98,Price,712,"New York, USA",Female,51,4,1493489,3,1,1,219064,0,Growth,Aggressive Growth,"{""NFLX"": 31, ""MSFT"": 55, ""NVDA"": 151, ""TSLA"": 308, ""AMD"": 261, ""META"": 271}"
+14017518,Turner,849,"Washington, USA",Female,25,8,113602,4,1,1,104535,0,Growth,Tech-focused Portfolio,"{""META"": 179, ""MSFT"": 84, ""TSLA"": 387, ""AMD"": 396}"
+a5b28d7e,Moran,774,"Texas, USA",Male,29,5,109576,5,1,1,58411,0,Growth,Long-term Growth,"{""MSFT"": 227, ""GOOGL"": 159, ""AAPL"": 321, ""AMD"": 287}"
+d00a168d,Taylor,730,"Texas, USA",Female,42,4,766397,5,1,1,225752,0,Growth,Long-term Growth,"{""AMD"": 401, ""AMZN"": 429, ""AAPL"": 143, ""NFLX"": 476}"
+6ad5f6cb,Rivera,766,"Florida, USA",Female,59,4,2451571,5,1,1,178421,0,Growth,Wealth Accumulation,"{""GOOGL"": 424, ""MSFT"": 239, ""AAPL"": 99, ""AMD"": 389, ""META"": 394}"
+86c75c85,Wright,752,"California, USA",Female,64,11,960332,4,1,1,147150,0,Moderate,Tech-focused Portfolio,"{""GOOGL"": 480, ""TSLA"": 325, ""META"": 157, ""NFLX"": 155, ""QQQ"": 459}"
+0c94ae12,Mitchell,821,"Washington, USA",Female,48,13,151054,4,1,1,105291,0,Growth,Long-term Growth,"{""GOOGL"": 92, ""AAPL"": 27, ""AMZN"": 128, ""TSLA"": 314, ""NFLX"": 109}"
+7612460b,Garcia,642,"Florida, USA",Male,48,4,238089,5,1,1,127527,0,Moderate,Long-term Growth,"{""GOOGL"": 53, ""NVDA"": 399, ""META"": 426, ""AMD"": 430, ""NFLX"": 130}"
+26136b6b,Little,624,"New York, USA",Male,38,3,905319,4,1,1,174859,0,Aggressive,Long-term Growth,"{""GOOGL"": 427, ""QQQ"": 451, ""MSFT"": 498, ""AMZN"": 225, ""META"": 268}"
+753a9a4f,Scott,683,"New York, USA",Female,54,13,1972333,5,1,1,177362,0,Moderate,Aggressive Growth,"{""QQQ"": 69, ""AMD"": 106, ""NVDA"": 114, ""NFLX"": 411, ""GOOGL"": 420, ""TSLA"": 40}"
+b874e50e,King,809,"Washington, USA",Female,67,12,2403160,3,1,1,148388,0,Moderate,Long-term Growth,"{""QQQ"": 27, ""TSLA"": 366, ""META"": 457, ""NVDA"": 23}"
+89369487,George,731,"Florida, USA",Male,71,4,3908823,5,1,1,152897,0,Growth,Tech-focused Portfolio,"{""MSFT"": 463, ""NVDA"": 17, ""NFLX"": 147, ""GOOGL"": 380, ""AMD"": 388}"
+4eb504da,Bishop,625,"Texas, USA",Female,27,5,100993,5,1,1,92554,0,Growth,Long-term Growth,"{""QQQ"": 392, ""MSFT"": 91, ""AMZN"": 347, ""AMD"": 386, ""TSLA"": 282, ""NFLX"": 241}"
+d5bfae25,Wood,710,"Washington, USA",Female,43,11,1112315,3,1,1,194819,0,Growth,Long-term Growth,"{""GOOGL"": 237, ""META"": 119, ""AMD"": 238, ""TSLA"": 332, ""MSFT"": 460, ""NVDA"": 401}"
+1f5de053,Lowe,731,"California, USA",Male,74,11,1505374,4,1,1,184865,0,Aggressive,Wealth Accumulation,"{""AMZN"": 436, ""AMD"": 322, ""GOOGL"": 337, ""TSLA"": 415, ""NVDA"": 310, ""META"": 354}"
+f74a0ecb,Ruiz,629,"Washington, USA",Female,30,7,1110479,4,1,1,284138,0,Moderate,Long-term Growth,"{""AMZN"": 76, ""MSFT"": 104, ""NFLX"": 146, ""QQQ"": 359}"
+d02e79e5,Clark,660,"California, USA",Female,69,14,3692218,2,1,1,158915,0,Moderate,Long-term Growth,"{""AMZN"": 431, ""NVDA"": 466, ""META"": 211, ""AAPL"": 164, ""MSFT"": 212, ""NFLX"": 256}"
+6a5d6ec2,Guzman,703,"Washington, USA",Male,23,7,116264,5,1,1,66813,0,Moderate,Long-term Growth,"{""TSLA"": 25, ""AAPL"": 436, ""NFLX"": 189, ""AMD"": 70}"
+caf03d03,Delacruz,664,"Washington, USA",Female,40,3,810393,2,1,1,162184,0,Growth,Wealth Accumulation,"{""GOOGL"": 185, ""AAPL"": 187, ""MSFT"": 328, ""AMZN"": 183, ""AMD"": 18}"
+a2fc252a,Jones,741,"New York, USA",Male,32,1,658561,3,1,1,257308,0,Growth,Tech-focused Portfolio,"{""TSLA"": 93, ""MSFT"": 305, ""NFLX"": 59, ""AAPL"": 317}"
+d1d8cf35,Martinez,682,"Texas, USA",Male,69,14,3582868,2,1,1,127421,0,Growth,Aggressive Growth,"{""QQQ"": 336, ""AAPL"": 327, ""GOOGL"": 493, ""NVDA"": 488, ""MSFT"": 351, ""NFLX"": 12}"
+cba70555,Tucker,735,"Texas, USA",Male,47,1,524961,2,1,1,90697,0,Moderate,Wealth Accumulation,"{""NFLX"": 389, ""QQQ"": 135, ""MSFT"": 61, ""META"": 80}"
+be16fa60,Bell,635,"New York, USA",Male,47,10,475150,5,1,1,281644,0,Aggressive,Aggressive Growth,"{""AAPL"": 401, ""AMZN"": 449, ""AMD"": 331, ""TSLA"": 152, ""META"": 34, ""NFLX"": 72}"
+3a3c7726,Gray,849,"Washington, USA",Female,51,9,1833721,2,1,1,167256,0,Growth,Long-term Growth,"{""AMZN"": 356, ""QQQ"": 305, ""AAPL"": 331, ""MSFT"": 321, ""META"": 359}"
+7a6573b9,Johnson,649,"California, USA",Male,56,14,2518760,2,1,1,155805,0,Moderate,Long-term Growth,"{""GOOGL"": 134, ""NVDA"": 14, ""AAPL"": 294, ""AMZN"": 216}"

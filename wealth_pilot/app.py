@@ -3,8 +3,9 @@ import pandas as pd
 import json
 import os
 import plotly.express as px
-from utils.market_data import get_market_data, get_market_news, get_ticker_history
-from utils.ai_agent import configure_genai, get_portfolio_analysis, chat_with_agent, analyze_news_impact, generate_meeting_agenda
+from utils.market_data import get_market_data, get_market_news, get_ticker_history, get_ticker_info
+from utils.ai_agent import configure_genai, get_portfolio_analysis, chat_with_agent, analyze_news_impact, generate_meeting_agenda, run_scenario_simulation
+from utils.crew_agent import run_crew_analysis
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -106,93 +107,189 @@ if page == "Dashboard":
     with c2:
         fig_geo = px.bar(df_clients, x='Geography', y='Balance', title='AUM by Geography')
         st.plotly_chart(fig_geo, width='stretch')
-
 elif page == "Client View":
     st.title("Client 360° View")
     
+    # Client Selection
     client_id = st.selectbox("Select Client", df_clients['CustomerId'].astype(str) + " - " + df_clients['Surname'])
     selected_id = client_id.split(" - ")[0]
     client = df_clients[df_clients['CustomerId'] == selected_id].iloc[0]
     
-    # Client Header
-    st.markdown(f"## {client['Surname']} (Age: {client['Age']})")
-    st.markdown(f"**Risk Profile:** {client['RiskProfile']} | **Goal:** {client['FinancialGoal']}")
-    
-    # Portfolio
-    portfolio = json.loads(client['Portfolio'])
-    
-    col1, col2 = st.columns([2, 1])
-    
-    with col1:
-        st.subheader("Current Portfolio")
-        if portfolio:
-            df_port = pd.DataFrame(list(portfolio.items()), columns=['Ticker', 'Value'])
-            st.dataframe(df_port, width='stretch')
-            
-            fig_port = px.pie(df_port, values='Value', names='Ticker', title='Portfolio Allocation')
-            st.plotly_chart(fig_port, width='stretch')
-        else:
-            st.info("No portfolio data available.")
-            
-    with col2:
-        st.subheader("AI Analysis")
-        if st.button("Generate Portfolio Insights"):
-            with st.spinner("Analyzing with Gemini..."):
-                # Fetch real market data for these tickers
-                tickers = list(portfolio.keys())
-                market_summary = get_market_data(tickers)
-                
-                analysis = get_portfolio_analysis(client.to_dict(), market_summary)
-                st.session_state['ai_analysis'] = analysis
-                st.markdown(analysis)
-        elif st.session_state['ai_analysis']:
-            st.markdown(st.session_state['ai_analysis'])
+    # ---------------------------------------------------------
+    # 1. Quick Profile Header
+    # ---------------------------------------------------------
+    with st.container():
+        # Custom "Card" for profile
+        col1, col2 = st.columns([1, 2])
         
-        st.markdown("---")
-        st.subheader("Chat with Agent")
-        user_query = st.text_input("Ask about this client...")
-        if user_query:
-            with st.spinner("Thinking..."):
-                context = f"Client: {client.to_dict()}\nPortfolio: {portfolio}"
-                response = chat_with_agent(user_query, context)
-                st.write(response)
+        with col1:
+            st.subheader(f"{client['Surname']}, {client['Gender']}")
+            st.caption(f"ID: {client['CustomerId']}")
+            
+            # Metrics with minimal spacing
+            st.markdown(f"**Risk Profile:** {client['RiskProfile']}") 
+            st.markdown(f"**Goal:** {client['FinancialGoal']}")
+            st.markdown(f"**Credit Score:** {client['CreditScore']}")
 
-    # New Agentic Features
+        with col2:
+            st.subheader("Portfolio Allocation")
+            portfolio = json.loads(client['Portfolio'])
+            
+            # Enrich Data
+            p_data = []
+            for ticker, amount in portfolio.items():
+                info = get_ticker_info(ticker)
+                p_data.append({
+                    "Ticker": ticker,
+                    "Name": info['Name'],
+                    "Category": info['Category'],
+                    "Value": f"${amount:,.2f}",
+                    "RawValue": amount # For sorting/charting
+                })
+            
+            df_port = pd.DataFrame(p_data)
+            
+            # Display Table with new columns
+            st.dataframe(
+                df_port[['Ticker', 'Name', 'Category', 'Value']], 
+                width='stretch', 
+                hide_index=True
+            )
+            
+            # Compact Donut Chart (Categorical or Ticker)
+            fig = px.pie(df_port, values='RawValue', names='Category', hole=0.5, title="Allocation by Category")
+            fig.update_layout(height=250, margin=dict(t=30, b=0, l=0, r=0), showlegend=True)
+            st.plotly_chart(fig, width='stretch')
+
     st.markdown("---")
-    st.subheader("Agentic Workflows")
+
+    # ---------------------------------------------------------
+    # 2. AI Intelligence Hub (Boxed Design)
+    # ---------------------------------------------------------
+    # Use st.info or st.success as a container background
+    with st.container():
+        st.subheader("🤖 Portfolio Intelligence")
+        
+        c_btn, c_res = st.columns([1, 3])
+        
+        with c_btn:
+            st.write("Generate a quick AI scan of the portfolio's health.")
+            if st.button("Generate AI Insights", type="primary"):
+                with st.spinner("Scanning market & portfolio..."):
+                    tickers = list(portfolio.keys())
+                    market_summary = get_market_data(tickers).to_string()
+                    sc = get_portfolio_analysis(client.to_dict(), market_summary)
+                    st.session_state['ai_analysis'] = sc
+        
+        with c_res:
+            if st.session_state['ai_analysis']:
+                # Boxed result
+                st.info(st.session_state['ai_analysis'], icon="💡")
+            else:
+                st.caption("AI Insight will appear here.")
+
+    st.markdown("---")
+
+    # ---------------------------------------------------------
+    # 3. Agentic Workflows (Tabs)
+    # ---------------------------------------------------------
+    st.subheader("⚡ Agentic Tools")
     
-    col_a, col_b = st.columns(2)
+    t1, t2, t3, t4 = st.tabs(["📰 News Impact", "📅 Meeting Prep", "⚠️ Black Swan Simulator", "🧠 Strategy Crew"])
     
-    with col_a:
-        if st.button("Analyze News Impact"):
-            with st.spinner("Scanning market news..."):
-                # Gather news for all tickers
-                all_news = []
-                for ticker in portfolio.keys():
-                    news = get_market_news(ticker)
-                    all_news.extend(news)
-                
-                if all_news:
-                    impact_analysis = analyze_news_impact(all_news[:10], portfolio, api_key=api_key) # Limit to top 10 for speed
-                    st.session_state['news_impact'] = impact_analysis
-                    st.markdown(impact_analysis)
-                else:
-                    st.info("No recent news found for portfolio holdings.")
-        elif st.session_state['news_impact']:
+    # Tab 1: News
+    with t1:
+        if st.button("Scan Market News"):
+            with st.spinner("Fetching global news..."):
+                tickers = list(portfolio.keys())
+                news_items = []
+                for t in tickers:
+                    news_items.extend(get_market_news(t))
+                impact_analysis = analyze_news_impact(news_items[:5], portfolio, api_key=api_key)
+                st.session_state['news_impact'] = impact_analysis
+        
+        if st.session_state['news_impact']:
             st.markdown(st.session_state['news_impact'])
 
-    with col_b:
-        if st.button("Prepare Meeting Agenda"):
-            with st.spinner("Drafting agenda..."):
+    # Tab 2: Meeting
+    with t2:
+        if st.button("Draft Meeting Agenda"):
+             with st.spinner("Drafting..."):
                 agenda = generate_meeting_agenda(client.to_dict(), api_key=api_key)
                 st.session_state['meeting_agenda'] = agenda
-                st.markdown(agenda)
-        elif st.session_state['meeting_agenda']:
-            st.markdown(st.session_state['meeting_agenda'])
+        
+        if st.session_state['meeting_agenda']:
+            st.success("Draft Ready:")
+            st.text_area("Agenda", st.session_state['meeting_agenda'], height=200)
 
-    # Report Generation
+    # Tab 3: Black Swan
+    with t3:
+        st.write("Simulate a market shock.")
+        scenario_input = st.text_input("Scenario", placeholder="e.g. 'Tech Sector crash 15%'")
+        if st.button("Run Simulation"):
+             with st.spinner("Simulating..."):
+                sim_res = run_scenario_simulation(portfolio, scenario_input, client.to_dict(), api_key=api_key)
+                st.markdown(sim_res)
+
+    # Tab 4: CrewAI
+    with t4:
+        st.write("**Autonomous Strategy Team:** Market Analyst + Risk Manager + Wealth Manager")
+        if st.button("Activate Strategy Crew"):
+            # Status Container for Real-time Feedback
+            status_container = st.empty()
+            
+            def update_status_ui(msg):
+                with status_container.container():
+                     # Use st.toast or st.info for live updates
+                    st.toast(msg, icon="🤖")
+                    status_container.info(msg, icon="🤖")
+
+            with st.spinner("Initializing Strategy Team..."):
+                tickers = list(portfolio.keys())
+                market_summary = get_market_data(tickers).to_string()
+                
+                results = run_crew_analysis(
+                    client.to_dict(), 
+                    portfolio, 
+                    market_summary, 
+                    api_key=api_key, 
+                    status_callback=update_status_ui
+                )
+                
+                # Clear status
+                status_container.empty()
+                st.toast("Strategy Team Completed!", icon="✅")
+                
+                # Nested Tabs for Crew
+                ct1, ct2, ct3 = st.tabs(["Analyst", "Risk", "Manager"])
+                
+                with ct1:
+                    try:
+                        d = json.loads(results.get("Market Analyst", "{}"))
+                        st.subheader("🚀 Opportunities")
+                        st.dataframe(pd.DataFrame(d.get("opportunities", [])))
+                        st.subheader("⚠️ Threats")
+                        st.dataframe(pd.DataFrame(d.get("threats", [])))
+                    except:
+                        st.write(results.get("Market Analyst"))
+                with ct2:
+                    try:
+                        d = json.loads(results.get("Risk Manager", "{}"))
+                        st.metric("Risk Score", d.get("risk_score"))
+                        st.write(f"**Summary:** {d.get('summary')}")
+                        st.write("**Concerns:**")
+                        for c in d.get("concerns", []):
+                            st.markdown(f"- {c}")
+                    except:
+                        st.write(results.get("Risk Manager"))
+                with ct3:
+                    st.markdown(results.get("Wealth Manager"))
+
+    # ---------------------------------------------------------
+    # 4. Report Generation
+    # ---------------------------------------------------------
     st.markdown("---")
-    if st.button("Generate Client Report (PDF)"):
+    if st.button("📄 Generate PDF Report"):
         from fpdf import FPDF
         import tempfile
         
@@ -209,8 +306,6 @@ elif page == "Client View":
 
             def chapter_body(self, body):
                 self.set_font('Arial', '', 10)
-                # FPDF doesn't support full Markdown or Unicode well by default
-                # We'll do basic cleanup
                 body = body.encode('latin-1', 'replace').decode('latin-1')
                 self.multi_cell(0, 5, body)
                 self.ln()
@@ -230,14 +325,6 @@ elif page == "Client View":
         if st.session_state.get('ai_analysis'):
             pdf.chapter_title("AI Portfolio Analysis")
             pdf.chapter_body(st.session_state['ai_analysis'])
-            
-        if st.session_state.get('news_impact'):
-            pdf.chapter_title("News Impact Analysis")
-            pdf.chapter_body(st.session_state['news_impact'])
-            
-        if st.session_state.get('meeting_agenda'):
-            pdf.chapter_title("Meeting Agenda")
-            pdf.chapter_body(st.session_state['meeting_agenda'])
             
         # Save to temp file
         with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp:

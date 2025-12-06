@@ -1,6 +1,34 @@
 import yfinance as yf
 import pandas as pd
 
+# Ticker Metadata Mapping
+TICKER_METADATA = {
+    "SPY": {"Name": "SPDR S&P 500 ETF Trust", "Category": "ETF (Equity)"},
+    "QQQ": {"Name": "Invesco QQQ Trust", "Category": "ETF (Equity)"},
+    "IWM": {"Name": "iShares Russell 2000 ETF", "Category": "ETF (Small Cap)"},
+    "GLD": {"Name": "SPDR Gold Shares", "Category": "ETF (Commodity)"},
+    "BND": {"Name": "Vanguard Total Bond Market ETF", "Category": "ETF (Bond)"},
+    "BTC-USD": {"Name": "Bitcoin", "Category": "Crypto"},
+    "VTI": {"Name": "Vanguard Total Stock Market ETF", "Category": "ETF (Equity)"},
+    "KO": {"Name": "Coca-Cola Company", "Category": "Equity"},
+    "JNJ": {"Name": "Johnson & Johnson", "Category": "Equity"},
+    "AAPL": {"Name": "Apple Inc.", "Category": "Equity"},
+    "MSFT": {"Name": "Microsoft Corp.", "Category": "Equity"},
+    "JPM": {"Name": "JPMorgan Chase & Co.", "Category": "Equity"},
+    "NVDA": {"Name": "NVIDIA Corp.", "Category": "Equity"},
+    "TSLA": {"Name": "Tesla Inc.", "Category": "Equity"},
+    "AMZN": {"Name": "Amazon.com Inc.", "Category": "Equity"},
+    "GOOGL": {"Name": "Alphabet Inc.", "Category": "Equity"},
+    "GOOG": {"Name": "Alphabet Inc.", "Category": "Equity"},
+    "NFLX": {"Name": "Netflix Inc.", "Category": "Equity"},
+    "AMD": {"Name": "Advanced Micro Devices", "Category": "Equity"},
+    "ETH-USD": {"Name": "Ethereum", "Category": "Crypto"}
+}
+
+def get_ticker_info(ticker):
+    """Returns Name and Category for a ticker."""
+    return TICKER_METADATA.get(ticker, {"Name": ticker, "Category": "Unknown"})
+
 def get_ticker_history(ticker, period="1mo"):
     """
     Fetches historical price data for a ticker.
@@ -33,10 +61,6 @@ def get_market_data(tickers):
     # Handle single ticker case vs multiple
     if len(tickers) == 1:
         ticker = tickers[0]
-        # yf.download for single ticker returns DataFrame with columns like 'Close', 'Open' directly
-        # But sometimes it has MultiIndex if group_by='ticker' is used? 
-        # Let's use Ticker object for safety or handle the DF structure carefully.
-        # Actually, let's just use Ticker object for current price to be safe and fast.
         try:
             ticker_obj = yf.Ticker(ticker)
             hist = ticker_obj.history(period="5d")
